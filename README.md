@@ -70,35 +70,35 @@ python3 manage.py runserver
 
 POST запрос по адресу /api/v1/users/
 
-{
+    {
 
-    "username": "XXX",
+      "username": "XXX",
 
-    "password": "XXX"
+      "password": "XXX"
 
-}
+    }
 
 - **Получение токена:**
 
 POST запрос по адресу /api/v1/jwt/create/
 
-{
+    {
 
-    "username": "XXX",
+      "username": "XXX",
 
-    "password": "XXX"
+      "password": "XXX"
 
-}
+    }
 
 *Пример ответа:*
 
-{
+    {
 
-    "refresh": "XXX",
+      "refresh": "XXX",
 
-    "access": "XXX"
+      "access": "XXX"
 
-}
+    }
 
 Токен вернётся в поле access, а данные из поля refresh пригодятся для обновления токена. При отправке запроcов передавайте токен в заголовке Authorization: Bearer <токен>.
 
@@ -132,18 +132,20 @@ GET запрос по адресу /api/v1/posts/
 
 POST запрос по адресу /api/v1/follow/
 
-{
-  "following": "string"
-}
+    {
+
+      "following": "string"
+      
+    }
 
 *Пример ответа:*
 
-{
+    {
 
-  "user": "string",
+      "user": "string",
 
-  "following": "string"
+      "following": "string"
 
-}
+    }
 
 ***Также см. документацию к API, доступную по адресу http://localhost:8000/redoc/***
