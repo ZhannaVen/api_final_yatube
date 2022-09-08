@@ -1,4 +1,3 @@
-from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
@@ -15,7 +14,6 @@ class PostSerializer(serializers.ModelSerializer):
         slug_field='username',
         read_only=True
     )
-    image = Base64ImageField(required=False, allow_null=True)
 
     class Meta:
         fields = '__all__'
