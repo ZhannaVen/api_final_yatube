@@ -4,8 +4,7 @@
 
 API_Yatube - REST API для Yatube. Приложение позволяет пользоваться функционалом проекта Yatube не заходя на сайт. 
 
-Yatube - социальная сеть для блогеров. (https://github.com/ZhannaVen/hw05_final)
-
+Yatube - социальная сеть для блогеров.
 ### Технологии:
 
 - проект написан на Python с использованием Django REST Framework
@@ -65,18 +64,6 @@ python3 manage.py runserver
 
 
 ### Аутентификация:
-
- - **Создание пользователя**
-
-POST запрос по адресу /api/v1/users/
-
-    {
-
-      "username": "XXX",
-
-      "password": "XXX"
-
-    }
 
 - **Получение токена:**
 
