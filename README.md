@@ -1,73 +1,50 @@
 # API_Yatube
 
-## Описание проекта:
+## Description:
 
-API_Yatube - REST API для Yatube. Приложение позволяет пользоваться функционалом проекта Yatube не заходя на сайт. 
+API_Yatube - REST API for Yatube. The application allows you to use the functionality of the Yatube project without website. (Yatube - social network for bloggers).
 
-Yatube - социальная сеть для блогеров.
-### Технологии:
+### Used frameworks and libraries:
 
-- проект написан на Python с использованием Django REST Framework
-- библиотека Simple JWT - работа с JWT-токеном
+- Python 3.7
+- Django 2.2.16
+- DRF 3.12.4
+- JWT
 
-## Как запустить проект:
+## How to start a project (Unix):
 
-Клонировать репозиторий и перейти в него в командной строке:
-
+Clone repository:
 ```
 git clone https://github.com/ZhannaVen/api_final_yatube.git
-```
-
-```
 cd api_final_yatube
 ```
-
-Cоздать и активировать виртуальное окружение:
-
+Create and activate virtual environment:
 ```
 python3 -m venv env
-```
-
-```
 source env/bin/activate
-```
-
-```
 python3 -m pip install --upgrade pip
 ```
-
-Установить зависимости из файла requirements.txt:
-
+Install dependencies from  requirements.txt:
 ```
 pip install -r requirements.txt
 ```
-
-Создать миграции:
-
-```
-python3 manage.py migrate
-```
-
-Выполнить миграции:
-
+Make migrations:
 ```
 python3 manage.py makemigrations
 ```
-
-Запустить проект:
-
+Start project:
 ```
 python3 manage.py runserver
 ```
 
-## Примеры запросов и ответов:
+## Sample Requests and Responses:
 
 
-### Аутентификация:
+### Authentication:
 
-- **Получение токена:**
+- **Obtaining a token:**
 
-POST запрос по адресу /api/v1/jwt/create/
+POST request to /api/v1/jwt/create/
 
     {
 
@@ -77,7 +54,7 @@ POST запрос по адресу /api/v1/jwt/create/
 
     }
 
-*Пример ответа:*
+*Response Example:*
 
     {
 
@@ -87,15 +64,15 @@ POST запрос по адресу /api/v1/jwt/create/
 
     }
 
-Токен вернётся в поле access, а данные из поля refresh пригодятся для обновления токена. При отправке запроcов передавайте токен в заголовке Authorization: Bearer <токен>.
+The token will be returned in the access field, and the data from the refresh field will be useful for updating token. When sending requests, pass the token in the Authorization: Bearer <token> header.
 
-### Примеры запросов:
+### Request examples:
 
-- **Получение всех публикаций пользователей:**
+- **Get all user posts:**
 
-GET запрос по адресу /api/v1/posts/
+GET request to /api/v1/posts/
 
-*Пример ответа:*
+*Response Example:*
 
 
     {
@@ -115,9 +92,9 @@ GET запрос по адресу /api/v1/posts/
     }
 
 
-- **Подписка на пользователя(анонимные запросы запрещены):**
+- **Subscribe to a user (anonymous requests are prohibited):**
 
-POST запрос по адресу /api/v1/follow/
+POST request to /api/v1/follow/
 
     {
 
@@ -125,7 +102,7 @@ POST запрос по адресу /api/v1/follow/
       
     }
 
-*Пример ответа:*
+*Response Example:*
 
     {
 
@@ -135,4 +112,4 @@ POST запрос по адресу /api/v1/follow/
 
     }
 
-***Также см. документацию к API, доступную по адресу http://localhost:8000/redoc/***
+***Also see the API documentation, available at http://localhost:8000/redoc/***
